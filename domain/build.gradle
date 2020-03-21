@@ -5,4 +5,7 @@ dependencies {
 
     implementation deps.kotlin.stdlib
     implementation deps.rx.java
+
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockk
 }
