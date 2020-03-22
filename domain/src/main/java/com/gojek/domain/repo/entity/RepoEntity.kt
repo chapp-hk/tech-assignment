@@ -10,6 +10,5 @@ data class RepoEntity(
     val languageColor: String = "",
     val stars: Int = 0,
     val forks: Int = 0,
-    val currentPeriodStars: Int = 0,
-    val builtBy: List<BuiltByEntity> = listOf()
+    val currentPeriodStars: Int = 0
 )
