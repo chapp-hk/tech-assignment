@@ -28,7 +28,7 @@ class RecyclerViewAdapter(
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
         holder.binding.apply {
             lifecycleOwner = context as? LifecycleOwner
-            setVariable(BR.viewModel, list[position])
+            setVariable(BR.viewHolder, list[position])
             executePendingBindings()
         }
     }
