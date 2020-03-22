@@ -1,9 +1,10 @@
-package com.gojek.assignment.app.trending
+package com.gojek.assignment.app.trending.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.viewModels
+import com.gojek.assignment.app.trending.TrendingViewModel
 import com.gojek.assignment.arch.fragment.AbstractFragment
 import com.gojek.assignment.databinding.FragmentTrendingBinding
 

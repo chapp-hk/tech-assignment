@@ -7,6 +7,6 @@
 
     <fragment
         android:id="@+id/trending"
-        android:name="com.gojek.assignment.app.trending.TrendingFragment"
+        android:name="com.gojek.assignment.app.trending.view.TrendingFragment"
         tools:layout="@layout/fragment_trending" />
 </navigation>
