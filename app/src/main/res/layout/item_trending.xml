@@ -70,13 +70,23 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Description" />
 
+            <ImageView
+                android:id="@+id/ivLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_circle"
+                android:tint="@{viewHolder.repoEntity.languageColor}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvDescription"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+                tools:tint="#f1e05a" />
+
             <TextView
                 android:id="@+id/tvLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_circle"
                 android:text="@{viewHolder.repoEntity.language}"
-                app:layout_constraintStart_toStartOf="@+id/tvDescription"
+                app:layout_constraintStart_toEndOf="@+id/ivLanguage"
                 app:layout_constraintTop_toBottomOf="@+id/tvDescription"
                 tools:text="Kotlin" />
 
