@@ -1,6 +1,9 @@
 package com.gojek.assignment.arch.dependency.repository
 
+import com.gojek.assignment.arch.helper.ColorHelper
+import com.gojek.data.adapter.ColorStringAdapter
 import com.gojek.data.adapter.FormattedNumberAdapter
+import com.gojek.data.adapter.IColorHelper
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -10,9 +13,13 @@ import java.text.NumberFormat
 class MoshiModule {
 
     @Provides
-    internal fun providesMoshi(formattedNumberAdapter: FormattedNumberAdapter): Moshi {
+    internal fun providesMoshi(
+        formattedNumberAdapter: FormattedNumberAdapter,
+        colorStringAdapter: ColorStringAdapter
+    ): Moshi {
         return Moshi.Builder()
             .add(formattedNumberAdapter)
+            .add(colorStringAdapter)
             .build()
     }
 
@@ -24,5 +31,15 @@ class MoshiModule {
     @Provides
     internal fun providesFormattedNumberAdapter(numberFormat: NumberFormat): FormattedNumberAdapter {
         return FormattedNumberAdapter(numberFormat)
+    }
+
+    @Provides
+    internal fun providesColorHelper(): IColorHelper {
+        return ColorHelper()
+    }
+
+    @Provides
+    internal fun providesColorStringAdapter(colorHelper: IColorHelper): ColorStringAdapter {
+        return ColorStringAdapter(colorHelper)
     }
 }
