@@ -17,12 +17,12 @@
         android:animateLayoutChanges="true"
         android:background="?selectableItemBackground"
         android:onClick="@{() -> viewHolder.toogleDetails()}"
-        android:padding="16dp">
+        android:padding="@dimen/itemPadding">
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/sdAvatar"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/iconSize"
+            android:layout_height="@dimen/iconSize"
             app:imageURI="@{viewHolder.repoEntity.avatar}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -32,7 +32,7 @@
             android:id="@+id/tvAuthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/itemPadding"
             android:text="@{viewHolder.repoEntity.author}"
             android:textColor="@color/colorText"
             android:textSize="@dimen/textSizeSubtitle"
@@ -44,7 +44,8 @@
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/itemPadding"
+            android:layout_marginTop="@dimen/titleMargin"
             android:text="@{viewHolder.repoEntity.name}"
             android:textColor="@color/colorText"
             android:textSize="@dimen/textSizeTitle"
@@ -55,7 +56,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/itemPadding"
             app:layout_constraintStart_toEndOf="@+id/sdAvatar"
             app:layout_constraintTop_toBottomOf="@+id/tvName"
             app:visibility="@{viewHolder.detailVisibility}"
@@ -65,11 +66,13 @@
                 android:id="@+id/tvDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="@dimen/descriptionPadding"
+                android:paddingBottom="@dimen/descriptionPadding"
                 android:text="@{viewHolder.repoEntity.description}"
                 android:textColor="@color/colorText"
                 android:textSize="@dimen/textSizeSubtitle"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Description" />
+                tools:text="Github repository description" />
 
             <ImageView
                 android:id="@+id/ivLanguage"
@@ -87,6 +90,7 @@
                 android:id="@+id/tvLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/iconPadding"
                 android:text="@{viewHolder.repoEntity.language}"
                 android:textColor="@color/colorText"
                 android:textSize="@dimen/textSizeSubtitle"
@@ -99,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_star"
+                android:drawablePadding="@dimen/iconPadding"
                 android:text="@{viewHolder.repoEntity.stars}"
                 android:textColor="@color/colorText"
                 android:textSize="@dimen/textSizeSubtitle"
@@ -111,6 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_fork"
+                android:drawablePadding="@dimen/iconPadding"
                 android:text="@{viewHolder.repoEntity.forks}"
                 android:textColor="@color/colorText"
                 android:textSize="@dimen/textSizeSubtitle"
