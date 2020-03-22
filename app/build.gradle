@@ -27,10 +27,17 @@ android {
     dataBinding {
         enabled = true
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':data')
+    implementation project(path: ':domain')
 
     implementation deps.kotlin.stdlib
 
@@ -44,4 +51,24 @@ dependencies {
     implementation deps.dagger.android_support
     kapt deps.dagger.compiler
     kapt deps.dagger.android_processor
+
+    //rx
+    implementation deps.rx.android
+    implementation deps.rx.java
+    implementation deps.rx.kotlin
+
+    //retrofit
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.adapter_rxjava2
+    implementation deps.retrofit.moshi_converter
+    implementation deps.okhttp.logging_interceptor
+
+    //moshi
+    implementation deps.moshi.core
+    kapt deps.moshi.codegen
+
+    //room
+    implementation deps.room.runtime
+    implementation deps.room.rxjava2
+    kapt deps.room.compiler
 }
