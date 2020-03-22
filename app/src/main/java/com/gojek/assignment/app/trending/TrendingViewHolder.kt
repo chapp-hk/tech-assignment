@@ -17,26 +17,6 @@ class TrendingViewHolder(
         return R.layout.item_trending
     }
 
-    fun getAvatar(): String {
-        return repoEntity.avatar
-    }
-
-    fun getAuthor(): String {
-        return repoEntity.author
-    }
-
-    fun getName(): String {
-        return repoEntity.name
-    }
-
-    fun getStars(): String {
-        return repoEntity.stars.toString()
-    }
-
-    fun getForks(): String {
-        return repoEntity.forks.toString()
-    }
-
     fun toogleDetails() {
         _detailsVisibility.value?.let {
             _detailsVisibility.value = !it

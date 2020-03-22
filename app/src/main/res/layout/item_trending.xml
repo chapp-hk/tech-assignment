@@ -27,7 +27,7 @@
                 android:id="@+id/sdAvatar"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                app:imageURI="@{viewHolder.avatar}"
+                app:imageURI="@{viewHolder.repoEntity.avatar}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -38,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="@{viewHolder.author}"
+                android:text="@{viewHolder.repoEntity.author}"
                 app:layout_constraintStart_toEndOf="@+id/sdAvatar"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Author" />
@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="@{viewHolder.name}"
+                android:text="@{viewHolder.repoEntity.name}"
                 app:layout_constraintStart_toEndOf="@+id/sdAvatar"
                 app:layout_constraintTop_toBottomOf="@+id/tvAuthor"
                 tools:text="Name" />
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_star"
-                android:text="@{viewHolder.stars}"
+                android:text="@{viewHolder.repoEntity.stars}"
                 app:layout_constraintStart_toEndOf="@+id/tvLanguage"
                 app:layout_constraintTop_toBottomOf="@+id/tvDescription"
                 tools:text="9,999" />
@@ -95,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_fork"
-                android:text="@{viewHolder.forks}"
+                android:text="@{viewHolder.repoEntity.forks}"
                 app:layout_constraintStart_toEndOf="@+id/tvStar"
                 app:layout_constraintTop_toBottomOf="@+id/tvDescription"
                 tools:text="9,999" />
