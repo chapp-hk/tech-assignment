@@ -1,9 +1,7 @@
 package com.gojek.data.repo.repository
 
-import com.gojek.data.repo.entity.BuiltByData
 import com.gojek.data.repo.entity.RepoData
 import com.gojek.domain.repo.IRepoRepository
-import com.gojek.domain.repo.entity.BuiltByEntity
 import com.gojek.domain.repo.entity.RepoEntity
 import io.reactivex.Single
 
@@ -29,18 +27,7 @@ class RepoRepository(
                 languageColor = it.languageColor,
                 stars = it.stars,
                 forks = it.forks,
-                currentPeriodStars = it.currentPeriodStars,
-                builtBy = mapBuiltByDataToEntity(it.builtBy)
-            )
-        }
-    }
-
-    private fun mapBuiltByDataToEntity(builtByDataList: List<BuiltByData>): List<BuiltByEntity> {
-        return builtByDataList.map {
-            BuiltByEntity(
-                username = it.username,
-                href = it.href,
-                avatar = it.avatar
+                currentPeriodStars = it.currentPeriodStars
             )
         }
     }
