@@ -57,6 +57,10 @@ deps.rx.java = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
 deps.rx.android = "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
 deps.rx.kotlin = "io.reactivex.rxjava2:rxkotlin:$versions.rx_kotlin"
 
+// Dependencies for Fresco
+deps.fresco = [:]
+deps.fresco.core = "com.facebook.fresco:fresco:$versions.fresco"
+
 // Dependencies for test frameworks
 deps.test = [:]
 deps.test.junit = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
