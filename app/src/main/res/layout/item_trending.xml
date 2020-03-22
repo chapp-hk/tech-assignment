@@ -84,6 +84,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tvDescription"
                 app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+                app:visibility="@{viewHolder.languageVisibility}"
                 tools:tint="#f1e05a" />
 
             <TextView
@@ -97,6 +98,7 @@
                 android:textSize="@dimen/textSizeSubtitle"
                 app:layout_constraintStart_toEndOf="@+id/ivLanguage"
                 app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+                app:visibility="@{viewHolder.languageVisibility}"
                 tools:ignore="RtlSymmetry"
                 tools:text="Kotlin" />
 

@@ -22,4 +22,8 @@ class TrendingViewHolder(
             _detailsVisibility.value = !it
         }
     }
+
+    fun getLanguageVisibility(): Boolean {
+        return repoEntity.language.isNotEmpty()
+    }
 }
