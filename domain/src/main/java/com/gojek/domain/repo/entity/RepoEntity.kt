@@ -7,7 +7,7 @@ data class RepoEntity(
     val url: String = "",
     val description: String = "",
     val language: String = "",
-    val languageColor: String = "",
+    val languageColor: Int = 0,
     val stars: String = "",
     val forks: String = "",
     val currentPeriodStars: Int = 0

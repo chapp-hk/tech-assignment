@@ -2,6 +2,7 @@ package com.gojek.data.repo.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.gojek.data.adapter.ColorString
 import com.gojek.data.adapter.FormattedNumber
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -29,7 +30,8 @@ data class RepoData(
     val language: String = "",
 
     @Json(name = "languageColor")
-    val languageColor: String = "",
+    @ColorString
+    val languageColor: Int = 0,
 
     @Json(name = "stars")
     @FormattedNumber
