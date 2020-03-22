@@ -12,6 +12,10 @@ class TrendingViewHolder(
         return R.layout.item_trending
     }
 
+    fun getAvatar(): String {
+        return repoEntity.avatar
+    }
+
     fun getAuthor(): String {
         return repoEntity.author
     }
