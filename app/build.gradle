@@ -92,4 +92,9 @@ dependencies {
     kapt deps.room.compiler
 
     implementation deps.fresco.core
+
+    //test
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockk
+    testImplementation 'android.arch.core:core-testing:1.1.1'
 }
