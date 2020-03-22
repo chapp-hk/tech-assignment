@@ -2,6 +2,7 @@ package com.gojek.data.repo.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.gojek.data.adapter.FormattedNumber
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -31,10 +32,12 @@ data class RepoData(
     val languageColor: String = "",
 
     @Json(name = "stars")
-    val stars: Int = 0,
+    @FormattedNumber
+    val stars: String = "",
 
     @Json(name = "forks")
-    val forks: Int = 0,
+    @FormattedNumber
+    val forks: String = "",
 
     @Json(name = "currentPeriodStars")
     val currentPeriodStars: Int = 0

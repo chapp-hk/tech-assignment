@@ -8,7 +8,7 @@ data class RepoEntity(
     val description: String = "",
     val language: String = "",
     val languageColor: String = "",
-    val stars: Int = 0,
-    val forks: Int = 0,
+    val stars: String = "",
+    val forks: String = "",
     val currentPeriodStars: Int = 0
 )
