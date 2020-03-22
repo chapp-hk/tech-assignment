@@ -2,6 +2,7 @@
 <resources>
     <dimen name="textSizeTitle">15sp</dimen>
     <dimen name="textSizeSubtitle">12sp</dimen>
+    <dimen name="textSizeToolbar">21sp</dimen>
     <dimen name="iconSize">32dp</dimen>
     <dimen name="itemPadding">16dp</dimen>
     <dimen name="iconPadding">4dp</dimen>

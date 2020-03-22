@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">GojekAssignment</string>
+    <string name="title_trending">Trending</string>
     <string name="iv_language_content_description">ivLanguage</string>
 </resources>
