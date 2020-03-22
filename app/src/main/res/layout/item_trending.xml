@@ -74,6 +74,7 @@
                 android:id="@+id/ivLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/iv_language_content_description"
                 android:src="@drawable/ic_circle"
                 android:tint="@{viewHolder.repoEntity.languageColor}"
                 app:layout_constraintBottom_toBottomOf="parent"
