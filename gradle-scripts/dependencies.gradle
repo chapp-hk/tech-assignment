@@ -16,6 +16,7 @@ deps.kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
 deps.support = [:]
 deps.support.appcompat = "androidx.appcompat:appcompat:$versions.support_appcompat"
 deps.support.core_ktx = "androidx.core:core-ktx:$versions.support_core_ktx"
+deps.support.constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.support_constraint_layout"
 
 // Dependencies for Dagger
 deps.dagger = [:]

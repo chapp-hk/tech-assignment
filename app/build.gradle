@@ -57,6 +57,7 @@ dependencies {
     //android support
     implementation deps.support.appcompat
     implementation deps.support.core_ktx
+    implementation deps.support.constraintlayout
 
     //dagger
     implementation deps.dagger.runtime
