@@ -37,4 +37,11 @@ dependencies {
     //android support
     implementation deps.support.appcompat
     implementation deps.support.core_ktx
+
+    //dagger
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    kapt deps.dagger.compiler
+    kapt deps.dagger.android_processor
 }

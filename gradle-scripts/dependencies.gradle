@@ -17,6 +17,14 @@ deps.support = [:]
 deps.support.appcompat = "androidx.appcompat:appcompat:$versions.support_appcompat"
 deps.support.core_ktx = "androidx.core:core-ktx:$versions.support_core_ktx"
 
+// Dependencies for Dagger
+deps.dagger = [:]
+deps.dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+deps.dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
+deps.dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
+deps.dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+deps.dagger.android_processor = "com.google.dagger:dagger-android-processor:$versions.dagger"
+
 // Dependencies for ROOM
 deps.room = [:]
 deps.room.runtime = "androidx.room:room-runtime:$versions.room"
