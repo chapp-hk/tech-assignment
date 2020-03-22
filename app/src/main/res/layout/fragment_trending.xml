@@ -14,11 +14,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
+            android:background="@drawable/background_toolbar"
             app:contentInsetStart="0dp">
 
             <TextView

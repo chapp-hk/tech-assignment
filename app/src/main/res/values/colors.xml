@@ -6,4 +6,5 @@
 
     <color name="colorText">#52575C</color>
     <color name="colorTextToolbar">#25282B</color>
+    <color name="colorDivider">#E8E8E8</color>
 </resources>
