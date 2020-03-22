@@ -1,5 +1,6 @@
 package com.gojek.assignment.arch.databinding
 
+import android.graphics.drawable.Drawable
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +14,12 @@ fun initRecyclerView(recyclerView: RecyclerView, list: List<IViewHolder>?) {
     }
 }
 
-@BindingAdapter("itemDecoration")
-fun setItemDecoration(recyclerView: RecyclerView, orientation: Int) {
-    recyclerView.addItemDecoration(DividerItemDecoration(recyclerView.context, orientation))
+@BindingAdapter("itemDecorationOrientaion", "itemDecorationDrawable", requireAll = true)
+fun setItemDecoration(recyclerView: RecyclerView, orientation: Int, drawable: Drawable) {
+    recyclerView.addItemDecoration(
+        DividerItemDecoration(
+            recyclerView.context,
+            orientation
+        ).apply { setDrawable(drawable) }
+    )
 }
