@@ -29,6 +29,14 @@ class TrendingViewHolder(
         return repoEntity.name
     }
 
+    fun getStars(): String {
+        return repoEntity.stars.toString()
+    }
+
+    fun getForks(): String {
+        return repoEntity.forks.toString()
+    }
+
     fun toogleDetails() {
         _detailsVisibility.value?.let {
             _detailsVisibility.value = !it
