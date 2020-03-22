@@ -1,6 +1,7 @@
 package com.gojek.data.repo.repository
 
 import androidx.room.Dao
+import androidx.room.Insert
 import androidx.room.Query
 import com.gojek.data.repo.entity.RepoData
 import io.reactivex.Single
@@ -13,4 +14,7 @@ interface RepoDao {
 
     @Query("DELETE FROM repo")
     fun deleteAllRepos()
+
+    @Insert
+    fun insertRepos(reposList: List<RepoData>)
 }

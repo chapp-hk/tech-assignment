@@ -11,7 +11,9 @@ class RepoRepository(
 ) : IRepoRepository {
 
     override fun getRepos(): Single<List<RepoEntity>> {
-        return repoApi.getRepositories()
+        return repoDao.getRepos()
+            .filter { it.isNotEmpty() }
+            .switchIfEmpty(repoApi.getRepositories().doOnSuccess(this::insertRepos))
             .map(this::mapRepoDataToEntity)
     }
 
@@ -30,5 +32,10 @@ class RepoRepository(
                 currentPeriodStars = it.currentPeriodStars
             )
         }
+    }
+
+    private fun insertRepos(repoList: List<RepoData>) {
+        repoDao.deleteAllRepos()
+        repoDao.insertRepos(repoList)
     }
 }
