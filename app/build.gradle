@@ -18,9 +18,18 @@ android {
     }
 
     buildTypes {
+        debug {
+            debuggable true
+            testCoverageEnabled true
+
+            buildConfigField "String", "BASE_URL", "\"${config.baseurl_debug}\""
+        }
         release {
+            debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "BASE_URL", "\"${config.baseurl_release}\""
         }
     }
 
