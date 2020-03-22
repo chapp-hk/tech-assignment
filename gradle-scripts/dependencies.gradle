@@ -25,6 +25,11 @@ deps.dagger.android_support = "com.google.dagger:dagger-android-support:$version
 deps.dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
 deps.dagger.android_processor = "com.google.dagger:dagger-android-processor:$versions.dagger"
 
+// Dependencies for Navigation
+deps.navigation = [:]
+deps.navigation.fragment = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+deps.navigation.ui = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+
 // Dependencies for ROOM
 deps.room = [:]
 deps.room.runtime = "androidx.room:room-runtime:$versions.room"

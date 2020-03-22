@@ -52,6 +52,10 @@ dependencies {
     kapt deps.dagger.compiler
     kapt deps.dagger.android_processor
 
+    //navigation
+    implementation deps.navigation.fragment
+    implementation deps.navigation.ui
+
     //rx
     implementation deps.rx.android
     implementation deps.rx.java
