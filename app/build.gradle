@@ -91,8 +91,14 @@ dependencies {
     implementation deps.room.rxjava2
     kapt deps.room.compiler
 
+    //fresco
     implementation deps.fresco.core
+
+    //shimmer
     implementation deps.shimmer.core
+
+    //timber
+    implementation deps.timber.core
 
     //test
     testImplementation deps.test.junit

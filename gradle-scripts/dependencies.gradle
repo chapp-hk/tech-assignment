@@ -66,6 +66,10 @@ deps.fresco.core = "com.facebook.fresco:fresco:$versions.fresco"
 deps.shimmer = [:]
 deps.shimmer.core = "com.facebook.shimmer:shimmer:$versions.shimmer"
 
+// Dependencies for Timber
+deps.timber = [:]
+deps.timber.core = "com.jakewharton.timber:timber:$versions.timber"
+
 // Dependencies for test frameworks
 deps.test = [:]
 deps.test.junit = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
