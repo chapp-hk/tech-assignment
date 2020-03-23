@@ -92,6 +92,7 @@ dependencies {
     kapt deps.room.compiler
 
     implementation deps.fresco.core
+    implementation deps.shimmer.core
 
     //test
     testImplementation deps.test.junit

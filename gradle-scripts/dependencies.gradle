@@ -62,6 +62,10 @@ deps.rx.kotlin = "io.reactivex.rxjava2:rxkotlin:$versions.rx_kotlin"
 deps.fresco = [:]
 deps.fresco.core = "com.facebook.fresco:fresco:$versions.fresco"
 
+// Dependencies for Shimmer
+deps.shimmer = [:]
+deps.shimmer.core = "com.facebook.shimmer:shimmer:$versions.shimmer"
+
 // Dependencies for test frameworks
 deps.test = [:]
 deps.test.junit = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
