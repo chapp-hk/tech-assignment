@@ -9,7 +9,7 @@ import retrofit2.Retrofit
 class ApiModule {
 
     @Provides
-    internal fun providesCoinCartApi(retrofit: Retrofit): RepoApi {
+    internal fun providesRepoApi(retrofit: Retrofit): RepoApi {
         return retrofit.create(RepoApi::class.java)
     }
 }

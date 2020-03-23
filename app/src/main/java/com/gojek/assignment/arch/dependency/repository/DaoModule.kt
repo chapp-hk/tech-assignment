@@ -21,7 +21,7 @@ class DaoModule {
     }
 
     @Provides
-    internal fun providesCoinCartDao(daoProvider: DaoProvider): RepoDao {
+    internal fun providesRepoDao(daoProvider: DaoProvider): RepoDao {
         return daoProvider.getRepoDao()
     }
 }
