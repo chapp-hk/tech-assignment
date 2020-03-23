@@ -3,6 +3,7 @@
     <dimen name="textSizeTitle">15sp</dimen>
     <dimen name="textSizeSubtitle">12sp</dimen>
     <dimen name="textSizeToolbar">21sp</dimen>
+    <dimen name="textSizeErrorTitle">18sp</dimen>
     <dimen name="iconSize">32dp</dimen>
     <dimen name="itemHeight">74dp</dimen>
     <dimen name="itemPadding">16dp</dimen>
@@ -13,4 +14,6 @@
     <dimen name="loadingItemPaddingVertical">21dp</dimen>
     <dimen name="loadingPlaceholderViewHeight">8dp</dimen>
     <dimen name="loadingPlaceholderViewWidth">100dp</dimen>
+    <dimen name="errorTitleMarginTop">24dp</dimen>
+    <dimen name="errorSubtitleMarginTop">8dp</dimen>
 </resources>

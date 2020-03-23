@@ -14,24 +14,52 @@
             type="android.view.View.OnClickListener" />
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:padding="@dimen/itemPadding"
         app:visibility="@{isVisible}"
         tools:visibility="visible">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="error" />
-
-        <Button
+        <ImageView
+            android:id="@+id/ivNetworkError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/iv_network_error_content_description"
+            android:src="@drawable/im_network_error" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivNetworkError"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/errorTitleMarginTop"
+            android:gravity="center"
+            android:text="@string/title_something_went_wrong"
+            android:textColor="@color/colorTextErrorTitle"
+            android:textSize="@dimen/textSizeErrorTitle"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSubitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/errorSubtitleMarginTop"
+            android:gravity="center"
+            android:text="@string/title_block_signal"
+            android:textColor="@color/colorTextErrorSubtitle"
+            android:textSize="@dimen/textSizeTitle" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:onClick="@{onClick}"
-            android:text="Click to retry" />
-    </LinearLayout>
+            android:text="@string/button_retry"
+            android:textSize="@dimen/textSizeTitle" />
+    </RelativeLayout>
 </layout>
