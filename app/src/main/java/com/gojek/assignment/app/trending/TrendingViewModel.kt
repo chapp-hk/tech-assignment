@@ -20,6 +20,9 @@ class TrendingViewModel
     private val _refreshing = MutableLiveData(false)
     val refreshing: LiveData<Boolean> = _refreshing
 
+    private val _loading = MutableLiveData(false)
+    val loading: LiveData<Boolean> = _loading
+
     fun refresh() {
         fetchRepos(true)
     }
@@ -39,10 +42,12 @@ class TrendingViewModel
 
     private fun setLoadingStatus(shouldForceUpdate: Boolean) {
         _refreshing.value = shouldForceUpdate
+        _loading.value = !shouldForceUpdate
     }
 
     private fun resetLoadingStatus() {
         _refreshing.value = false
+        _loading.value = false
     }
 
     private fun mapToTrendingViewHolder(repoList: List<RepoEntity>): List<TrendingViewHolder> {
