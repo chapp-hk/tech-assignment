@@ -26,6 +26,7 @@
             app:imageURI="@{viewHolder.repoEntity.avatar}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:placeholderImage="@drawable/ic_circle_vector"
             app:roundAsCircle="true" />
 
         <TextView
