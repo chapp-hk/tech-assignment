@@ -39,8 +39,5 @@ data class RepoData(
 
     @Json(name = "forks")
     @FormattedNumber
-    val forks: String = "",
-
-    @Json(name = "currentPeriodStars")
-    val currentPeriodStars: Int = 0
+    val forks: String = ""
 )

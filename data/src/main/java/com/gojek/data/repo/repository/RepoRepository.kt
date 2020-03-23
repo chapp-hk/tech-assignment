@@ -39,8 +39,7 @@ class RepoRepository(
                 language = it.language,
                 languageColor = it.languageColor,
                 stars = it.stars,
-                forks = it.forks,
-                currentPeriodStars = it.currentPeriodStars
+                forks = it.forks
             )
         }
     }
