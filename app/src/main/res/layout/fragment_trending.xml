@@ -11,13 +11,14 @@
     </data>
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:background="@drawable/background_toolbar"
@@ -32,15 +33,22 @@
                 android:textSize="@dimen/textSizeToolbar" />
         </androidx.appcompat.widget.Toolbar>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:splitMotionEvents="false"
-            app:itemDecorationDrawable="@{@drawable/item_decoration}"
-            app:itemDecorationOrientaion="@{androidx.recyclerview.widget.DividerItemDecoration.VERTICAL}"
-            app:items="@{viewModel.list}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_trending" />
-    </LinearLayout>
+            android:layout_below="@+id/toolbar"
+            app:onRefreshListener="@{() -> viewModel.refresh()}">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:splitMotionEvents="false"
+                app:itemDecorationDrawable="@{@drawable/item_decoration}"
+                app:itemDecorationOrientaion="@{androidx.recyclerview.widget.DividerItemDecoration.VERTICAL}"
+                app:items="@{viewModel.list}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_trending" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </RelativeLayout>
 </layout>

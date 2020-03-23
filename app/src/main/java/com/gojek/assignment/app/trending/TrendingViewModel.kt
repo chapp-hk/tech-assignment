@@ -17,6 +17,10 @@ class TrendingViewModel
     private val _list = MutableLiveData<List<IViewHolder>>()
     val list: LiveData<List<IViewHolder>> = _list
 
+    fun refresh() {
+
+    }
+
     fun getRepos() {
         getReposUseCase.execute()
             .map(this::mapToTrendingViewHolder)
