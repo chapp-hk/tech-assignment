@@ -9,8 +9,8 @@ import com.gojek.assignment.arch.recyclerview.RecyclerViewAdapter
 
 @BindingAdapter("items")
 fun initRecyclerView(recyclerView: RecyclerView, list: List<IViewHolder>?) {
-    recyclerView.takeIf { it.adapter == null }?.let { _recyclerView ->
-        list?.let { _recyclerView.adapter = RecyclerViewAdapter(_recyclerView.context, it) }
+    if (null == recyclerView.adapter && null != list) {
+        recyclerView.adapter = RecyclerViewAdapter(recyclerView.context, list)
     }
 }
 
