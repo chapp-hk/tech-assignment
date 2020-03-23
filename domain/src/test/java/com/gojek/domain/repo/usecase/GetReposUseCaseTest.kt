@@ -32,13 +32,13 @@ class GetReposUseCaseTest {
 
     @Test
     fun execute() {
-        every { repoRepository.getRepos() } returns single
+        every { repoRepository.getRepos(any()) } returns single
         every { single.subscribeOn(any()) } returns single
         every { single.observeOn(any()) } returns single
 
-        getReposUseCase.execute()
+        getReposUseCase.execute(true)
 
-        verify { repoRepository.getRepos() }
+        verify { repoRepository.getRepos(eq(true)) }
         verify { single.subscribeOn(eq(ioScheduler)) }
         verify { single.observeOn(eq(mainScheduler)) }
     }
