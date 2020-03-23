@@ -7,6 +7,7 @@ import com.gojek.assignment.arch.viewmodel.AbstractViewModel
 import com.gojek.domain.repo.entity.RepoEntity
 import com.gojek.domain.repo.usecase.GetReposUseCase
 import io.reactivex.rxkotlin.addTo
+import timber.log.Timber
 import javax.inject.Inject
 
 class TrendingViewModel
@@ -65,6 +66,8 @@ class TrendingViewModel
     }
 
     private fun onGetRepoError(throwable: Throwable) {
+        Timber.e(throwable)
+
         if (list.value.isNullOrEmpty()) {
             _error.value = true
         }
