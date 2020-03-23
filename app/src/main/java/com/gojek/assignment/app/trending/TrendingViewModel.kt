@@ -17,15 +17,32 @@ class TrendingViewModel
     private val _list = MutableLiveData<List<IViewHolder>>()
     val list: LiveData<List<IViewHolder>> = _list
 
-    fun refresh() {
+    private val _refreshing = MutableLiveData(false)
+    val refreshing: LiveData<Boolean> = _refreshing
 
+    fun refresh() {
+        fetchRepos(true)
     }
 
     fun getRepos() {
-        getReposUseCase.execute()
+        fetchRepos(false)
+    }
+
+    private fun fetchRepos(shouldForceUpdate: Boolean) {
+        getReposUseCase.execute(shouldForceUpdate)
+            .doOnSubscribe { setLoadingStatus(shouldForceUpdate) }
+            .doFinally { resetLoadingStatus() }
             .map(this::mapToTrendingViewHolder)
             .subscribe(this::onGetRepoSuccess, this::onGetRepoError)
             .addTo(compositeDisposable)
+    }
+
+    private fun setLoadingStatus(shouldForceUpdate: Boolean) {
+        _refreshing.value = shouldForceUpdate
+    }
+
+    private fun resetLoadingStatus() {
+        _refreshing.value = false
     }
 
     private fun mapToTrendingViewHolder(repoList: List<RepoEntity>): List<TrendingViewHolder> {

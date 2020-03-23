@@ -11,8 +11,8 @@ class GetReposUseCase(
     private val repoRepository: IRepoRepository
 ) {
 
-    fun execute(): Single<List<RepoEntity>> {
-        return repoRepository.getRepos()
+    fun execute(shouldForceUpdate: Boolean): Single<List<RepoEntity>> {
+        return repoRepository.getRepos(shouldForceUpdate)
             .subscribeOn(ioScheduler)
             .observeOn(mainScheduler)
     }

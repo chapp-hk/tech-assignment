@@ -10,11 +10,22 @@ class RepoRepository(
     private val repoDao: RepoDao
 ) : IRepoRepository {
 
-    override fun getRepos(): Single<List<RepoEntity>> {
+    override fun getRepos(shouldForceUpdate: Boolean): Single<List<RepoEntity>> {
+        return if (shouldForceUpdate) {
+            getReposFromNetwork().map(this::mapRepoDataToEntity)
+        } else {
+            getReposFromLocal().map(this::mapRepoDataToEntity)
+        }
+    }
+
+    private fun getReposFromNetwork(): Single<List<RepoData>> {
+        return repoApi.getRepositories().doOnSuccess(this::insertRepos)
+    }
+
+    private fun getReposFromLocal(): Single<List<RepoData>> {
         return repoDao.getRepos()
             .filter { it.isNotEmpty() }
-            .switchIfEmpty(repoApi.getRepositories().doOnSuccess(this::insertRepos))
-            .map(this::mapRepoDataToEntity)
+            .switchIfEmpty(getReposFromNetwork())
     }
 
     private fun mapRepoDataToEntity(dataList: List<RepoData>): List<RepoEntity> {

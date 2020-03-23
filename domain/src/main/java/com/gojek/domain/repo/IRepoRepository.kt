@@ -5,5 +5,5 @@ import io.reactivex.Single
 
 interface IRepoRepository {
 
-    fun getRepos(): Single<List<RepoEntity>>
+    fun getRepos(shouldForceUpdate: Boolean): Single<List<RepoEntity>>
 }
