@@ -4,8 +4,13 @@
     <dimen name="textSizeSubtitle">12sp</dimen>
     <dimen name="textSizeToolbar">21sp</dimen>
     <dimen name="iconSize">32dp</dimen>
+    <dimen name="itemHeight">74dp</dimen>
     <dimen name="itemPadding">16dp</dimen>
     <dimen name="iconPadding">4dp</dimen>
     <dimen name="descriptionPadding">8dp</dimen>
     <dimen name="titleMargin">6dp</dimen>
+    <dimen name="loadingItemPaddingEnd">36dp</dimen>
+    <dimen name="loadingItemPaddingVertical">21dp</dimen>
+    <dimen name="loadingPlaceholderViewHeight">8dp</dimen>
+    <dimen name="loadingPlaceholderViewWidth">100dp</dimen>
 </resources>
