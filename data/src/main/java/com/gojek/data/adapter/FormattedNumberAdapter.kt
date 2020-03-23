@@ -10,7 +10,11 @@ class FormattedNumberAdapter(
 
     @ToJson
     fun toJson(@FormattedNumber value: String): Int {
-        return value.toInt()
+        return try {
+            value.toInt()
+        } catch (e: Exception) {
+            0
+        }
     }
 
     @FromJson
