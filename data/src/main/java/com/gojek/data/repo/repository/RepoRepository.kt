@@ -19,7 +19,7 @@ class RepoRepository(
     }
 
     private fun getReposFromNetwork(): Single<List<RepoData>> {
-        return repoApi.getRepositories().doOnSuccess(this::insertRepos)
+        return repoApi.getRepos().doOnSuccess(this::insertRepos)
     }
 
     private fun getReposFromLocal(): Single<List<RepoData>> {

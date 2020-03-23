@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface RepoApi {
 
     @GET("repositories")
-    fun getRepositories(): Single<List<RepoData>>
+    fun getRepos(): Single<List<RepoData>>
 }
