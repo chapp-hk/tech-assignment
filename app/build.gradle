@@ -97,5 +97,5 @@ dependencies {
     //test
     testImplementation deps.test.junit
     testImplementation deps.test.mockk
-    testImplementation 'android.arch.core:core-testing:1.1.1'
+    testImplementation deps.test.arch_core
 }
