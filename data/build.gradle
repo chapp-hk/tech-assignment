@@ -17,4 +17,8 @@ dependencies {
 
     //retrofit
     implementation deps.retrofit.moshi_converter
+
+    //test
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockk
 }
