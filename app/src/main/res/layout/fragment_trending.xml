@@ -57,7 +57,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/toolbar"
-            app:isVisible="@{viewModel.loading}" />
+            app:isVisible="@{viewModel.loading}"
+            tools:visibility="gone" />
 
         <include
             layout="@layout/view_error"
@@ -65,6 +66,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/toolbar"
             app:isVisible="@{viewModel.error}"
-            app:onClick="@{() -> viewModel.getRepos()}" />
+            app:onClick="@{() -> viewModel.getRepos()}"
+            tools:visibility="gone" />
     </RelativeLayout>
 </layout>
