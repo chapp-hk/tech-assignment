@@ -1,5 +1,7 @@
 package com.gojek.assignment.app
 
+import android.content.Context
+import androidx.multidex.MultiDex
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.core.ImagePipelineConfig
 import com.gojek.assignment.BuildConfig
@@ -8,7 +10,6 @@ import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import timber.log.Timber
 import timber.log.Timber.DebugTree
-
 
 class App : DaggerApplication() {
 
@@ -20,6 +21,11 @@ class App : DaggerApplication() {
         super.onCreate()
         initTimber()
         initFresco()
+    }
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
     }
 
     private fun initTimber() {
