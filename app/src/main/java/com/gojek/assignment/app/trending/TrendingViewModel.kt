@@ -23,6 +23,9 @@ class TrendingViewModel
     private val _loading = MutableLiveData(false)
     val loading: LiveData<Boolean> = _loading
 
+    private val _error = MutableLiveData(false)
+    val error: LiveData<Boolean> = _error
+
     fun refresh() {
         fetchRepos(true)
     }
@@ -43,6 +46,7 @@ class TrendingViewModel
     private fun setLoadingStatus(shouldForceUpdate: Boolean) {
         _refreshing.value = shouldForceUpdate
         _loading.value = !shouldForceUpdate
+        _error.value = false
     }
 
     private fun resetLoadingStatus() {
@@ -61,6 +65,8 @@ class TrendingViewModel
     }
 
     private fun onGetRepoError(throwable: Throwable) {
-
+        if (list.value.isNullOrEmpty()) {
+            _error.value = true
+        }
     }
 }
