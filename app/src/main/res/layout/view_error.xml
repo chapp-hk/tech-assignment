@@ -56,10 +56,12 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/height_48dp"
             android:layout_alignParentBottom="true"
+            android:background="@drawable/background_button_selector"
             android:onClick="@{onClick}"
             android:text="@string/button_retry"
+            android:textColor="@color/color_green"
             android:textSize="@dimen/textSizeTitle" />
     </RelativeLayout>
 </layout>
