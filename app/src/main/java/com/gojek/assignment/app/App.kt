@@ -6,11 +6,13 @@ import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.core.ImagePipelineConfig
 import com.gojek.assignment.BuildConfig
 import com.gojek.assignment.arch.dependency.DaggerAppComponent
+import com.gojek.assignment.arch.helper.OpenForTesting
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 
+@OpenForTesting
 class App : DaggerApplication() {
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
