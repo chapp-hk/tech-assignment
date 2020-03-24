@@ -1,53 +1,29 @@
 package com.gojek.assignment.app.trending
 
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import com.gojek.assignment.R
 import com.gojek.assignment.app.MainActivity
 import com.gojek.assignment.arch.dispatcher.ErrorDispatcher
 import com.gojek.assignment.arch.dispatcher.RepoDispatcher
-import com.gojek.assignment.arch.helper.DaoProvider
+import com.gojek.assignment.arch.fragment.AbstractFragmentTest
 import com.gojek.assignment.arch.matcher.RecyclerViewMatcher.atPosition
-import okhttp3.mockwebserver.MockWebServer
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.not
-import org.junit.After
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
 @LargeTest
-class TrendingFragmentTest {
+class TrendingFragmentTest : AbstractFragmentTest() {
 
     @get:Rule
     val activityRule = ActivityTestRule(MainActivity::class.java, true, false)
-
-    private val mockWebServer = MockWebServer()
-
-    @Before
-    fun setUp() {
-        Room.databaseBuilder(
-            InstrumentationRegistry.getInstrumentation().targetContext.applicationContext,
-            DaoProvider::class.java,
-            "DaoProvider.db"
-        ).build().apply {
-            getRepoDao().deleteAllRepos()
-        }
-        mockWebServer.start(8080)
-    }
-
-    @After
-    fun tearDown() {
-        mockWebServer.shutdown()
-    }
 
     @Test
     fun should_show_error_view_when_network_error() {
