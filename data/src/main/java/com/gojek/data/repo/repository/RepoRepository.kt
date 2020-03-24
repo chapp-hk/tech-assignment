@@ -17,10 +17,10 @@ class RepoRepository(
 
     override fun getRepos(shouldForceUpdate: Boolean): Single<List<RepoEntity>> {
         return if (appPreference.isDataExpired() || shouldForceUpdate) {
-            getReposFromNetwork().map(this::mapRepoDataToEntity)
+            getReposFromNetwork()
         } else {
-            getReposFromLocal().map(this::mapRepoDataToEntity)
-        }
+            getReposFromLocal()
+        }.map(this::mapRepoDataToEntity)
     }
 
     private fun getReposFromNetwork(): Single<List<RepoData>> {
