@@ -13,7 +13,7 @@ import javax.inject.Inject
 class TrendingViewModel
 @Inject constructor(
     private val getReposUseCase: GetReposUseCase
-) : AbstractViewModel<Any>() {
+) : AbstractViewModel() {
 
     private val _list = MutableLiveData<List<IViewHolder>>()
     val list: LiveData<List<IViewHolder>> = _list

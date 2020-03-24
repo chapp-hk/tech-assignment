@@ -15,7 +15,7 @@ abstract class AbstractFragment : DaggerFragment() {
 
     @Inject
     protected lateinit var viewModelFactory: ViewModelProvider.Factory
-    protected abstract val viewModel: AbstractViewModel<out Any>
+    protected abstract val viewModel: AbstractViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
