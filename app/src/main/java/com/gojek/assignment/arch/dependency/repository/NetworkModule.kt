@@ -43,12 +43,13 @@ class NetworkModule {
 
     @Provides
     internal fun providesRetrofit(
+        baseUrl: String,
         moshiConverterFactory: MoshiConverterFactory,
         rxJava2CallAdapterFactory: RxJava2CallAdapterFactory,
         okHttpClient: OkHttpClient
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl(baseUrl)
             .addConverterFactory(moshiConverterFactory)
             .addCallAdapterFactory(rxJava2CallAdapterFactory)
             .client(okHttpClient)
