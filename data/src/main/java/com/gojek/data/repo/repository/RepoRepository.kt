@@ -1,5 +1,6 @@
 package com.gojek.data.repo.repository
 
+import com.gojek.data.local.IAppPreference
 import com.gojek.data.repo.entity.RepoData
 import com.gojek.data.repo.entity.RepoDataMapper
 import com.gojek.domain.repo.IRepoRepository
@@ -8,13 +9,14 @@ import io.reactivex.Single
 
 class RepoRepository(
     private val repoApi: RepoApi,
-    private val repoDao: RepoDao
+    private val repoDao: RepoDao,
+    private val appPreference: IAppPreference
 ) : IRepoRepository {
 
     private val repoDataMapper = RepoDataMapper()
 
     override fun getRepos(shouldForceUpdate: Boolean): Single<List<RepoEntity>> {
-        return if (shouldForceUpdate) {
+        return if (appPreference.isDataExpired() || shouldForceUpdate) {
             getReposFromNetwork().map(this::mapRepoDataToEntity)
         } else {
             getReposFromLocal().map(this::mapRepoDataToEntity)
@@ -38,5 +40,6 @@ class RepoRepository(
     private fun insertRepos(repoList: List<RepoData>) {
         repoDao.deleteAllRepos()
         repoDao.insertRepos(repoList)
+        appPreference.setDataTime(System.currentTimeMillis())
     }
 }
