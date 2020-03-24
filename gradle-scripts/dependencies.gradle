@@ -79,3 +79,5 @@ deps.test.arch_core = "android.arch.core:core-testing:$versions.test_arch_core"
 // Dependencies for Android test
 deps.android_test = [:]
 deps.android_test.runner = "androidx.test:runner:$versions.android_test_runner"
+deps.android_test.rules = "androidx.test:rules:$versions.android_test_rules"
+deps.android_test.espresso = "androidx.test.espresso:espresso-core:$versions.android_test_espresso"

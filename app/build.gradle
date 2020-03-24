@@ -107,4 +107,6 @@ dependencies {
 
     //android test
     androidTestImplementation deps.android_test.runner
+    androidTestImplementation deps.android_test.rules
+    androidTestImplementation deps.android_test.espresso
 }
