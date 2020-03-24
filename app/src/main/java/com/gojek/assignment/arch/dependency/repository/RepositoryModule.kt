@@ -1,5 +1,8 @@
 package com.gojek.assignment.arch.dependency.repository
 
+import android.content.Context
+import android.content.SharedPreferences
+import com.gojek.assignment.arch.helper.AppPreference
 import com.gojek.data.repo.repository.RepoApi
 import com.gojek.data.repo.repository.RepoDao
 import com.gojek.data.repo.repository.RepoRepository
@@ -16,8 +19,19 @@ import dagger.Provides
 )
 class RepositoryModule {
 
+    private val preferenceDataTimeName = "preference_data_time"
+
     @Provides
-    internal fun providesRepoRepository(repoApi: RepoApi, repoDao: RepoDao): IRepoRepository {
-        return RepoRepository(repoApi, repoDao)
+    internal fun providesSharedPreference(context: Context): SharedPreferences {
+        return context.getSharedPreferences(preferenceDataTimeName, Context.MODE_PRIVATE)
+    }
+
+    @Provides
+    internal fun providesRepoRepository(
+        repoApi: RepoApi,
+        repoDao: RepoDao,
+        appPreference: AppPreference
+    ): IRepoRepository {
+        return RepoRepository(repoApi, repoDao, appPreference)
     }
 }
