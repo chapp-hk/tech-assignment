@@ -11,6 +11,7 @@ deps.android.gradle_plugin = "com.android.tools.build:gradle:$versions.android_g
 deps.kotlin = [:]
 deps.kotlin.gradle_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
 deps.kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+deps.kotlin.all_open = "org.jetbrains.kotlin:kotlin-allopen:$versions.kotlin"
 
 // Dependencies for Android support
 deps.support = [:]
