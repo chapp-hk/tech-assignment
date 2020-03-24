@@ -105,6 +105,9 @@ dependencies {
     testImplementation deps.test.mockk
     testImplementation deps.test.arch_core
 
+    //mock web server
+    androidTestImplementation deps.okhttp.mock_server
+
     //android test
     androidTestImplementation deps.android_test.runner
     androidTestImplementation deps.android_test.rules
