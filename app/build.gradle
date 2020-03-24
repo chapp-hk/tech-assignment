@@ -104,4 +104,7 @@ dependencies {
     testImplementation deps.test.junit
     testImplementation deps.test.mockk
     testImplementation deps.test.arch_core
+
+    //android test
+    androidTestImplementation deps.android_test.runner
 }

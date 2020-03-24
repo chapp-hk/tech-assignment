@@ -75,3 +75,7 @@ deps.test = [:]
 deps.test.junit = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
 deps.test.mockk = "io.mockk:mockk:$versions.test_mockk"
 deps.test.arch_core = "android.arch.core:core-testing:$versions.test_arch_core"
+
+// Dependencies for Android test
+deps.android_test = [:]
+deps.android_test.runner = "androidx.test:runner:$versions.android_test_runner"
