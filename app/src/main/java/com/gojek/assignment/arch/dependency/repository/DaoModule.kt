@@ -14,10 +14,11 @@ class DaoModule {
 
     @Provides
     internal fun providesDatabase(application: Application): DaoProvider {
+        //just simply handle missing migration path
         return Room.databaseBuilder(
             application.applicationContext,
             DaoProvider::class.java, databaseName
-        ).build()
+        ).fallbackToDestructiveMigration().build()
     }
 
     @Provides
