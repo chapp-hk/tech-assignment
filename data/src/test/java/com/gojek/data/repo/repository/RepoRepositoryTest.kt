@@ -2,7 +2,6 @@ package com.gojek.data.repo.repository
 
 import com.gojek.data.local.IAppPreference
 import com.gojek.data.repo.entity.RepoData
-import com.gojek.domain.repo.entity.RepoEntity
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
@@ -24,14 +23,12 @@ class RepoRepositoryTest {
 
 
     private lateinit var singleRepoData: Single<List<RepoData>>
-    private lateinit var singleRepoEntity: Single<List<RepoEntity>>
     private lateinit var repoRepository: RepoRepository
 
     @Before
     fun setUp() {
         MockKAnnotations.init(this)
         singleRepoData = Single.just(listOf(RepoData()))
-        singleRepoEntity = Single.just(listOf(RepoEntity()))
         repoRepository = RepoRepository(repoApi, repoDao, appPreference)
 
         every { repoApi.getRepos() } returns singleRepoData
