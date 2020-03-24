@@ -4,6 +4,8 @@
     <string name="title_something_went_wrong">Something went wrong…</string>
     <string name="title_block_signal">An alien is probably blocking your signal.</string>
     <string name="button_retry">Retry</string>
+    <string name="menu_sort_stars">Sort by stars</string>
+    <string name="menu_sort_name">Sort by name</string>
     <string name="iv_language_content_description">ivLanguage</string>
     <string name="iv_network_error_content_description">ivNetworkError</string>
 </resources>
