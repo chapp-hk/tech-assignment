@@ -9,6 +9,6 @@ class TestBaseUrlModule {
 
     @Provides
     internal fun providesBaseUrl(): String {
-        return "http://localhost:8080/"
+        return BuildConfig.BASE_URL_TEST
     }
 }

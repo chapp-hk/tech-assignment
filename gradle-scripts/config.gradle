@@ -2,3 +2,4 @@ ext.config = [:]
 //Replace the value below with your own base url
 ext.config.baseurl_debug = "https://github-trending-api.now.sh/"
 ext.config.baseurl_release = "https://github-trending-api.now.sh/"
+ext.config.baseurl_test = "http://localhost:8080/"

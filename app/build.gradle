@@ -25,6 +25,7 @@ android {
             testCoverageEnabled true
 
             buildConfigField "String", "BASE_URL", "\"${config.baseurl_debug}\""
+            buildConfigField "String", "BASE_URL_TEST", "\"${config.baseurl_test}\""
         }
         release {
             debuggable false
