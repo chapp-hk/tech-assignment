@@ -51,6 +51,7 @@ deps.retrofit.moshi_converter = "com.squareup.retrofit2:converter-moshi:$version
 
 // Dependencies for Okhttp
 deps.okhttp = [:]
+deps.okhttp.core = "com.squareup.okhttp3:okhttp:$versions.okhttp"
 deps.okhttp.logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp_logging_interceptor"
 deps.okhttp.mock_server = "com.squareup.okhttp3:mockwebserver:$versions.okhttp_mock_server"
 

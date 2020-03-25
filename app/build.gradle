@@ -86,7 +86,12 @@ dependencies {
     implementation deps.retrofit.runtime
     implementation deps.retrofit.adapter_rxjava2
     implementation deps.retrofit.moshi_converter
+
+    //okhttp
     implementation deps.okhttp.logging_interceptor
+    implementation(deps.okhttp.core) {
+        force = true
+    }
 
     //moshi
     implementation deps.moshi.core
