@@ -93,6 +93,9 @@ dependencies {
         force = true
     }
 
+    //play service
+    implementation deps.play_service.auth
+
     //moshi
     implementation deps.moshi.core
     kapt deps.moshi.codegen

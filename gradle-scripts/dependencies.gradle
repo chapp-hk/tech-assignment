@@ -55,6 +55,9 @@ deps.okhttp.core = "com.squareup.okhttp3:okhttp:$versions.okhttp"
 deps.okhttp.logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp_logging_interceptor"
 deps.okhttp.mock_server = "com.squareup.okhttp3:mockwebserver:$versions.okhttp_mock_server"
 
+deps.play_service = [:]
+deps.play_service.auth = "com.google.android.gms:play-services-auth:$versions.play_service_auth"
+
 // Dependencies for rx
 deps.rx = [:]
 deps.rx.java = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
