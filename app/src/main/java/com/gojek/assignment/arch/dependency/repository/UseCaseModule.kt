@@ -8,10 +8,7 @@ import io.reactivex.Scheduler
 import io.reactivex.annotations.SchedulerSupport
 import javax.inject.Named
 
-@Module(
-    includes = [
-        RepositoryModule::class]
-)
+@Module(includes = [RepositoryModule::class])
 class UseCaseModule {
 
     @Provides

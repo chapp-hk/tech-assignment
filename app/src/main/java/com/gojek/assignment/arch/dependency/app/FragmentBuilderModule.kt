@@ -5,17 +5,10 @@ import com.gojek.assignment.arch.dependency.repository.UseCaseModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
-@Module(
-    includes = [
-        UseCaseModule::class
-    ]
-)
+@Module(includes = [UseCaseModule::class])
 abstract class FragmentBuilderModule {
 
-    @ContributesAndroidInjector(
-        modules = [
-            UseCaseModule::class]
-    )
+    @ContributesAndroidInjector(modules = [UseCaseModule::class])
     @FragmentScope
     internal abstract fun contributeTrendingFragment(): TrendingFragment
 }
