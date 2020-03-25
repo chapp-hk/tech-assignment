@@ -1,6 +1,5 @@
 package com.gojek.assignment.app.trending
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.gojek.assignment.R
 import com.gojek.assignment.arch.recyclerview.IViewHolder
@@ -11,7 +10,7 @@ class TrendingViewHolder(
 ) : IViewHolder {
 
     private val _detailsVisibility = MutableLiveData(false)
-    val detailVisibility: LiveData<Boolean> = _detailsVisibility
+    val detailVisibility = _detailsVisibility
 
     override fun getLayoutId(): Int {
         return R.layout.item_trending

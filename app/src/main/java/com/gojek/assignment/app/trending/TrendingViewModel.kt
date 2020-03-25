@@ -1,6 +1,5 @@
 package com.gojek.assignment.app.trending
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.gojek.assignment.arch.recyclerview.IViewHolder
 import com.gojek.assignment.arch.viewmodel.AbstractViewModel
@@ -16,16 +15,16 @@ class TrendingViewModel
 ) : AbstractViewModel() {
 
     private val _list = MutableLiveData<List<IViewHolder>>()
-    val list: LiveData<List<IViewHolder>> = _list
+    val list = _list
 
     private val _refreshing = MutableLiveData(false)
-    val refreshing: LiveData<Boolean> = _refreshing
+    val refreshing = _refreshing
 
     private val _loading = MutableLiveData(false)
-    val loading: LiveData<Boolean> = _loading
+    val loading = _loading
 
     private val _error = MutableLiveData(false)
-    val error: LiveData<Boolean> = _error
+    val error = _error
 
     fun refresh() {
         fetchRepos(true)
