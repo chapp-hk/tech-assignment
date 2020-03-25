@@ -38,7 +38,7 @@
             android:layout_marginTop="@dimen/errorTitleMarginTop"
             android:gravity="center"
             android:text="@string/title_something_went_wrong"
-            android:textColor="@color/colorTextErrorTitle"
+            android:textColor="@color/color_text_error_title"
             android:textSize="@dimen/textSizeErrorTitle"
             android:textStyle="bold" />
 
@@ -51,7 +51,7 @@
             android:layout_marginTop="@dimen/errorSubtitleMarginTop"
             android:gravity="center"
             android:text="@string/title_block_signal"
-            android:textColor="@color/colorTextErrorSubtitle"
+            android:textColor="@color/color_text_error_subtitle"
             android:textSize="@dimen/textSizeTitle" />
 
         <Button
