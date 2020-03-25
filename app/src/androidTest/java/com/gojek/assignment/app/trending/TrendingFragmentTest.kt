@@ -63,7 +63,7 @@ class TrendingFragmentTest : AbstractFragmentTest() {
 
         onView(withId(R.id.btRetry)).check(matches(isDisplayed()))
 
-        Thread.sleep(1000)
+        Thread.sleep(500)
 
         mockWebServer.setDispatcher(RepoDispatcher())
 
@@ -77,6 +77,7 @@ class TrendingFragmentTest : AbstractFragmentTest() {
         mockWebServer.setDispatcher(RepoDispatcher())
 
         activityRule.launchActivity(null)
+        Thread.sleep(500)
 
         onView(withId(R.id.recyclerView))
             .perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(1, click()))
