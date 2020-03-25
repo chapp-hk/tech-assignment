@@ -33,7 +33,7 @@
                 android:layout_gravity="center"
                 android:text="@string/title_trending"
                 android:textColor="@color/color_text_toolbar"
-                android:textSize="@dimen/textSizeToolbar" />
+                android:textSize="@dimen/text_size_toolbar" />
         </androidx.appcompat.widget.Toolbar>
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

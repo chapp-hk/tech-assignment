@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="textSizeTitle">15sp</dimen>
-    <dimen name="textSizeSubtitle">12sp</dimen>
-    <dimen name="textSizeToolbar">21sp</dimen>
-    <dimen name="textSizeErrorTitle">18sp</dimen>
-    <dimen name="iconSize">32dp</dimen>
-    <dimen name="itemHeight">74dp</dimen>
-    <dimen name="itemPadding">16dp</dimen>
-    <dimen name="iconPadding">4dp</dimen>
-    <dimen name="descriptionPadding">8dp</dimen>
-    <dimen name="titleMargin">6dp</dimen>
-    <dimen name="loadingItemPaddingEnd">36dp</dimen>
-    <dimen name="loadingItemPaddingVertical">21dp</dimen>
-    <dimen name="loadingPlaceholderViewHeight">8dp</dimen>
-    <dimen name="loadingPlaceholderViewWidth">100dp</dimen>
-    <dimen name="errorTitleMarginTop">24dp</dimen>
-    <dimen name="errorSubtitleMarginTop">8dp</dimen>
-
-    <dimen name="radius_4dp">4dp</dimen>
+    <dimen name="text_size_title">15sp</dimen>
+    <dimen name="text_size_subtitle">12sp</dimen>
+    <dimen name="text_size_toolbar">21sp</dimen>
+    <dimen name="text_size_error_title">18sp</dimen>
+    <dimen name="icon_size">32dp</dimen>
+    <dimen name="height_item">74dp</dimen>
     <dimen name="height_48dp">48dp</dimen>
+    <dimen name="item_padding">16dp</dimen>
+    <dimen name="icon_padding">4dp</dimen>
+    <dimen name="description_padding">8dp</dimen>
+    <dimen name="title_margin">6dp</dimen>
+    <dimen name="loading_item_padding_end">36dp</dimen>
+    <dimen name="loading_item_padding_vertical">21dp</dimen>
+    <dimen name="loading_placeholder_view_height">8dp</dimen>
+    <dimen name="loading_placeholder_view_width">100dp</dimen>
+    <dimen name="error_title_margin_top">24dp</dimen>
+    <dimen name="error_subtitle_margin_top">8dp</dimen>
+    <dimen name="radius_4dp">4dp</dimen>
 </resources>

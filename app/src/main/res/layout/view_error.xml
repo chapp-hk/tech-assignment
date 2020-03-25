@@ -17,7 +17,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/itemPadding"
+        android:padding="@dimen/item_padding"
         app:visibility="@{isVisible}"
         tools:visibility="visible">
 
@@ -35,11 +35,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/ivNetworkError"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/errorTitleMarginTop"
+            android:layout_marginTop="@dimen/error_title_margin_top"
             android:gravity="center"
             android:text="@string/title_something_went_wrong"
             android:textColor="@color/color_text_error_title"
-            android:textSize="@dimen/textSizeErrorTitle"
+            android:textSize="@dimen/text_size_error_title"
             android:textStyle="bold" />
 
         <TextView
@@ -48,11 +48,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTitle"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/errorSubtitleMarginTop"
+            android:layout_marginTop="@dimen/error_subtitle_margin_top"
             android:gravity="center"
             android:text="@string/title_block_signal"
             android:textColor="@color/color_text_error_subtitle"
-            android:textSize="@dimen/textSizeTitle" />
+            android:textSize="@dimen/text_size_title" />
 
         <Button
             android:id="@+id/btRetry"
@@ -63,6 +63,6 @@
             android:onClick="@{onClick}"
             android:text="@string/button_retry"
             android:textColor="@color/color_green"
-            android:textSize="@dimen/textSizeTitle" />
+            android:textSize="@dimen/text_size_title" />
     </RelativeLayout>
 </layout>
