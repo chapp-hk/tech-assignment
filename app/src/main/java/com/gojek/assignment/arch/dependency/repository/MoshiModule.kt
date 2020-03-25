@@ -7,10 +7,16 @@ import com.gojek.data.adapter.IColorHelper
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
+import retrofit2.converter.moshi.MoshiConverterFactory
 import java.text.NumberFormat
 
 @Module
 class MoshiModule {
+
+    @Provides
+    internal fun providesMoshiConverterFactory(moshi: Moshi): MoshiConverterFactory {
+        return MoshiConverterFactory.create(moshi)
+    }
 
     @Provides
     internal fun providesMoshi(
