@@ -3,6 +3,7 @@ package com.gojek.assignment.app.trending
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.swipeDown
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
@@ -14,6 +15,7 @@ import com.gojek.assignment.arch.dispatcher.ErrorDispatcher
 import com.gojek.assignment.arch.dispatcher.RepoDispatcher
 import com.gojek.assignment.arch.fragment.AbstractFragmentTest
 import com.gojek.assignment.arch.matcher.RecyclerViewMatcher.atPosition
+import com.gojek.assignment.arch.matcher.SwipeRefreshLayoutMatcher.isRefreshing
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.not
 import org.junit.Rule
@@ -98,5 +100,18 @@ class TrendingFragmentTest : AbstractFragmentTest() {
                     )
                 )
             )
+    }
+
+    @Test
+    fun should_refresh_when_swipe_down_on_recycler_view() {
+        mockWebServer.setDispatcher(RepoDispatcher())
+
+        activityRule.launchActivity(null)
+
+        Thread.sleep(500)
+
+        onView(withId(R.id.recyclerView)).perform(swipeDown())
+
+        onView((withId(R.id.swipeRefreshLayout))).check(matches(isRefreshing()))
     }
 }
