@@ -7,6 +7,7 @@ import com.facebook.imagepipeline.core.ImagePipelineConfig
 import com.gojek.assignment.BuildConfig
 import com.gojek.assignment.arch.dependency.DaggerAppComponent
 import com.gojek.assignment.arch.helper.OpenForTesting
+import com.google.android.gms.security.ProviderInstaller
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import timber.log.Timber
@@ -23,11 +24,20 @@ class App : DaggerApplication() {
         super.onCreate()
         initTimber()
         initFresco()
+        installSslCert()
     }
 
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
         MultiDex.install(this)
+    }
+
+    private fun installSslCert() {
+        try {
+            ProviderInstaller.installIfNeeded(this)
+        } catch (throwable: Throwable) {
+            Timber.e(throwable)
+        }
     }
 
     private fun initTimber() {
