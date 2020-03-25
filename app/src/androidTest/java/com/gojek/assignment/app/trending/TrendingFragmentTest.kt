@@ -27,7 +27,7 @@ class TrendingFragmentTest : AbstractFragmentTest() {
 
     @Test
     fun should_show_error_view_when_network_error() {
-        mockWebServer.dispatcher = ErrorDispatcher()
+        mockWebServer.setDispatcher(ErrorDispatcher())
 
         activityRule.launchActivity(null)
 
@@ -57,7 +57,7 @@ class TrendingFragmentTest : AbstractFragmentTest() {
 
     @Test
     fun should_refresh_when_click_retry_button() {
-        mockWebServer.dispatcher = ErrorDispatcher()
+        mockWebServer.setDispatcher(ErrorDispatcher())
 
         activityRule.launchActivity(null)
 
@@ -65,7 +65,7 @@ class TrendingFragmentTest : AbstractFragmentTest() {
 
         Thread.sleep(1000)
 
-        mockWebServer.dispatcher = RepoDispatcher()
+        mockWebServer.setDispatcher(RepoDispatcher())
 
         onView(withId(R.id.btRetry)).perform(click())
 
@@ -74,7 +74,7 @@ class TrendingFragmentTest : AbstractFragmentTest() {
 
     @Test
     fun should_toggle_expand_state_when_click_on_item() {
-        mockWebServer.dispatcher = RepoDispatcher()
+        mockWebServer.setDispatcher(RepoDispatcher())
 
         activityRule.launchActivity(null)
 
