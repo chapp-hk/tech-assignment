@@ -1,7 +1,6 @@
 package com.gojek.assignment.arch
 
 import android.app.Application
-import com.gojek.assignment.arch.dependency.TestBaseUrlModule
 import com.gojek.assignment.arch.dependency.app.AppModule
 import com.gojek.assignment.arch.dependency.app.AppScope
 import com.gojek.assignment.arch.dependency.app.FragmentBuilderModule
@@ -18,8 +17,7 @@ import dagger.android.support.DaggerApplication
         AndroidInjectionModule::class,
         AppModule::class,
         FragmentBuilderModule::class,
-        ViewModelBuilderModule::class,
-        TestBaseUrlModule::class
+        ViewModelBuilderModule::class
     ]
 )
 interface TestAppComponent : AndroidInjector<DaggerApplication> {
