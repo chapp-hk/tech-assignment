@@ -65,7 +65,8 @@ class TrendingFragmentTest : AbstractFragmentTest() {
 
         onView(withId(R.id.btRetry)).check(matches(isDisplayed()))
 
-        Thread.sleep(500)
+        //TODO: should use IdlingResource
+        Thread.sleep(3000)
 
         mockWebServer.setDispatcher(RepoDispatcher())
 
@@ -79,6 +80,8 @@ class TrendingFragmentTest : AbstractFragmentTest() {
         mockWebServer.setDispatcher(RepoDispatcher())
 
         activityRule.launchActivity(null)
+
+        //TODO: should use IdlingResource
         Thread.sleep(500)
 
         onView(withId(R.id.recyclerView))
@@ -108,6 +111,7 @@ class TrendingFragmentTest : AbstractFragmentTest() {
 
         activityRule.launchActivity(null)
 
+        //TODO: should use IdlingResource
         Thread.sleep(500)
 
         onView(withId(R.id.recyclerView)).perform(swipeDown())
