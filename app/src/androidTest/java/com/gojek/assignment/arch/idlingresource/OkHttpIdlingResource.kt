@@ -1,4 +1,4 @@
-package com.gojek.assignment.arch
+package com.gojek.assignment.arch.idlingresource
 
 import androidx.test.espresso.IdlingResource
 import androidx.test.espresso.IdlingResource.ResourceCallback
