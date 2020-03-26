@@ -3,7 +3,7 @@ package com.gojek.assignment.arch.fragment
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import com.gojek.assignment.app.TestApp
-import com.gojek.assignment.arch.idlingresource.OkHttpIdlingResource
+import com.gojek.assignment.arch.idling.OkHttpIdlingResource
 import com.gojek.assignment.arch.dependency.TestAppComponent
 import com.gojek.assignment.arch.helper.DaoProvider
 import okhttp3.mockwebserver.MockWebServer
