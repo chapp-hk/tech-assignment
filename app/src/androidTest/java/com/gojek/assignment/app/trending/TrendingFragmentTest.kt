@@ -2,8 +2,8 @@ package com.gojek.assignment.app.trending
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.action.ViewActions.swipeDown
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
@@ -15,9 +15,10 @@ import com.gojek.assignment.arch.dispatcher.ErrorDispatcher
 import com.gojek.assignment.arch.dispatcher.RepoDispatcher
 import com.gojek.assignment.arch.fragment.AbstractFragmentTest
 import com.gojek.assignment.arch.matcher.RecyclerViewMatcher.atPosition
-import com.gojek.assignment.arch.matcher.SwipeRefreshLayoutMatcher.isRefreshing
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.not
+import org.junit.After
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
@@ -26,6 +27,19 @@ class TrendingFragmentTest : AbstractFragmentTest() {
 
     @get:Rule
     val activityRule = ActivityTestRule(MainActivity::class.java, true, false)
+
+    @Before
+    override fun setUp() {
+        super.setUp()
+        getTestAppComponent().inject(this)
+        IdlingRegistry.getInstance().register(okHttpIdlingResource)
+    }
+
+    @After
+    override fun tearDown() {
+        super.tearDown()
+        IdlingRegistry.getInstance().unregister(okHttpIdlingResource)
+    }
 
     @Test
     fun should_show_error_view_when_network_error() {
@@ -65,9 +79,6 @@ class TrendingFragmentTest : AbstractFragmentTest() {
 
         onView(withId(R.id.btRetry)).check(matches(isDisplayed()))
 
-        //TODO: should use IdlingResource
-        Thread.sleep(3000)
-
         mockWebServer.setDispatcher(RepoDispatcher())
 
         onView(withId(R.id.btRetry)).perform(click())
@@ -80,9 +91,6 @@ class TrendingFragmentTest : AbstractFragmentTest() {
         mockWebServer.setDispatcher(RepoDispatcher())
 
         activityRule.launchActivity(null)
-
-        //TODO: should use IdlingResource
-        Thread.sleep(500)
 
         onView(withId(R.id.recyclerView))
             .perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(1, click()))
@@ -103,19 +111,5 @@ class TrendingFragmentTest : AbstractFragmentTest() {
                     )
                 )
             )
-    }
-
-    @Test
-    fun should_refresh_when_swipe_down_on_recycler_view() {
-        mockWebServer.setDispatcher(RepoDispatcher())
-
-        activityRule.launchActivity(null)
-
-        //TODO: should use IdlingResource
-        Thread.sleep(500)
-
-        onView(withId(R.id.recyclerView)).perform(swipeDown())
-
-        onView((withId(R.id.swipeRefreshLayout))).check(matches(isRefreshing()))
     }
 }
